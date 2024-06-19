@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Estacionamento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2e2e2e;
+    }
+
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 60px;
+      background-color: #f6ff48;
+      border-radius: 8px;
+      margin-top: 60px;
+      text-transform: uppercase;
+
+
+    }
+
+    h1 {
+      text-align: center;
+
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+
+    }
+
+    form input {
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    form button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      color: #cbd417;
+      background: #e12f2f;
+      border-radius: 10px;
+      text-transform: uppercase;
+
+    }
+
+    form button:hover {
+      background-color: #e16969;
+    }
+
+    .car-list {
+      margin-top: 20px;
+      text-transform: uppercase;
+
+    }
+
+    .car-list table {
+      width: 100%;
+      border-collapse: collapse;
+      text-transform: uppercase;
+
+    }
+
+    .car-list th,
+    .car-list td {
+      border: 3px solid #000000;
+      padding: 8px;
+      text-align: center;
+      font-weight: 800;
+      text-transform: uppercase;
+
+    }
+
+    .car-list th {
+      background-color: #f2f2f2;
+      text-transform: uppercase;
+
+    }
+
+    @media (max-width: 400px) {
+      .container {
+        max-width: 600px;
+        padding: 10px;
+        margin-top: 20px;
+      }
+
+      .car-list th,
+      .car-list td {
+        border: 3px solid #000000;
+        padding: 5px;
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+
+      form input {
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+
+      form button {
+        padding: 10px;
+        font-size: 10px;
+        cursor: pointer;
+        color: #fff;
+        background: #e12f2f;
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-weight: 800;
+
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 30px;
+
+      }
+    }
+
+    @media (max-width: 320px) {
+      form input {
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 10px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 25px;
+
+      }
+
+      .car-list th,
+      .car-list td {
+        border: 3px solid #000000;
+        padding: 5px;
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Estacionamento Saturno</h1>
+    <form id="parkingForm">
+      <input type="text" id="carPlate" placeholder="Placa do Carro" required>
+      <input type="time" id="entryTime" placeholder="Hora de Entrada" required>
+      <button type="submit">Registrar Carro</button>
+    </form>
+    <div class="car-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Placa</th>
+            <th>Hora de Entrada</th>
+            <th>Hora de Saída</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody id="carTableBody">
+          <!-- Os carros registrados aparecerão aqui -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
